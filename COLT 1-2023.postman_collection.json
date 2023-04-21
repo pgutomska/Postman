@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "01bda3d2-8325-4395-9047-440117b4fa28",
+		"name": "COLT 1/2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26547901"
+	},
+	"item": [
+		{
+			"name": "Board",
+			"item": [
+				{
+					"name": "Create a Board",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/?key=936fb00af8b24eb4ea42baacdf7b5bf0&token=ATTA389b30a4e2f4f4ffb3b8ba454c60754d9d70a52dd1c68bfa30eaed19aaf3503838D1DC65&name=",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "936fb00af8b24eb4ea42baacdf7b5bf0"
+								},
+								{
+									"key": "token",
+									"value": "ATTA389b30a4e2f4f4ffb3b8ba454c60754d9d70a52dd1c68bfa30eaed19aaf3503838D1DC65"
+								},
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Board",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/1/boards/ID?key={{key}}&token={{token}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"1",
+								"boards",
+								"ID"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a List on a Board",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/1/boards/{{id}}/lists?key={{key}}&token={{token}}&name=",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{id}}",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lists",
+			"item": [
+				{
+					"name": "Create a new List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/1/lists?idBoard={{id}}&name=&key={{key}}&token={{token}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"1",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "idBoard",
+									"value": "{{id}}",
+									"description": "required"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"description": "required"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "pos",
+									"value": "",
+									"description": "Position of the list. top, bottom, or a positive floating point number",
+									"disabled": true
+								},
+								{
+									"key": "idListSource",
+									"value": null,
+									"description": "ID of the List to copy into the new List",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a List",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/1/lists/6435bd12bb18f9ead68b4772?key={{key}}&token={{token}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"1",
+								"lists",
+								"6435bd12bb18f9ead68b4772"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "rename2",
+									"disabled": true
+								},
+								{
+									"key": "idBoard",
+									"value": "{{idBoard}}",
+									"disabled": true
+								},
+								{
+									"key": "pos",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "subscribed",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "closed",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archive or unarchive a List",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/1/lists/6435bd12bb18f9ead68b4772/closed?key={{key}}&token={{token}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"1",
+								"lists",
+								"6435bd12bb18f9ead68b4772",
+								"closed"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "value",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "Create a new Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/1/cards?key={{key}}&token={{token}}&idList=",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"1",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "idList",
+									"value": "",
+									"description": "required"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Checklist on a Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "1/cards/643c2f794d2c82b5818e80d8/checklists?key={{key}}&token={{token}}&name=checklist test",
+							"host": [
+								"1"
+							],
+							"path": [
+								"cards",
+								"643c2f794d2c82b5818e80d8",
+								"checklists"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "checklist test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Sticker to a Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/1/cards/643c2f794d2c82b5818e80d8/stickers?key={{key}}&token={{token}}&image=taco-cool&top=0&left=-60&zIndex=1&rotate=180",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"1",
+								"cards",
+								"643c2f794d2c82b5818e80d8",
+								"stickers"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "image",
+									"value": "taco-cool"
+								},
+								{
+									"key": "top",
+									"value": "0"
+								},
+								{
+									"key": "left",
+									"value": "-60"
+								},
+								{
+									"key": "zIndex",
+									"value": "1"
+								},
+								{
+									"key": "rotate",
+									"value": "180"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
